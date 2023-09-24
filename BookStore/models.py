@@ -62,10 +62,6 @@ class Book(models.Model):
         blank=False,
     )
 
-    Cover_Image = models.ImageField(
-        null=True,
-        blank=True,
-    )
 
     Description = models.TextField(
         max_length=200,
