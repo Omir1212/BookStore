@@ -80,6 +80,10 @@ class Book(models.Model):
 
 
 class Author(models.Model):
+
+    def __str__(self):
+        return self.name
+    
     name = models.CharField(
         max_length=200,
         null=False,
@@ -97,6 +101,10 @@ class Author(models.Model):
 
 
 class Genre(models.Model):
+
+    def __str__(self):
+        return self.name
+    
     name = models.CharField(
         max_length=200,
         null=False,
@@ -114,6 +122,11 @@ class Genre(models.Model):
 
 
 class Publisher(models.Model):
+
+    def __str__(self):
+        return self.name
+    
+
     name = models.CharField(
         max_length=200,
         null=False,
@@ -137,6 +150,10 @@ class Publisher(models.Model):
 
 
 class Customer(models.Model):
+
+    def __str__(self):
+        return self.Username
+    
     Username = models.CharField(
         max_length=200,
         null=False,
@@ -172,6 +189,10 @@ class Customer(models.Model):
 
 
 class Order(models.Model):
+
+    # def __str__(self):
+    #     return self.Customer
+    
     # Foreign Key relationship with Customer
     Customer = models.ForeignKey(Customer, null= False, blank=False, on_delete=models.CASCADE, related_name='orders')
 
@@ -204,6 +225,10 @@ class Order(models.Model):
 
 
 class Review(models.Model):
+
+    def __str__(self):
+        return self.Book
+    
     Book = models.ForeignKey(Book, null= False, blank= False, on_delete=models.CASCADE)
 
     # Foreign Key relationship with Customer
