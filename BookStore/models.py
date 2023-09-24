@@ -4,6 +4,10 @@ from django.forms import ValidationError
 # Create your models here.
 
 class Book(models.Model):
+
+    def __str__(self):
+        return self.Title
+    
     def validate_max_rating(value):
         if value > 5.0: 
             raise ValidationError("The maximum rating allowed is 5.0.")
@@ -71,6 +75,8 @@ class Book(models.Model):
 
     class Meta:
         db_table = 'Books'
+
+        
 
 
 class Author(models.Model):
