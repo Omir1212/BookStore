@@ -4,6 +4,8 @@ from .models import Book, Author, Genre, Review, Order, Customer, Publisher
 class BookStoreItemsAdmin(admin.ModelAdmin):
     pass
 
+
+
 admin.site.register(Book, BookStoreItemsAdmin)
 admin.site.register(Author, BookStoreItemsAdmin)
 admin.site.register(Genre, BookStoreItemsAdmin)
