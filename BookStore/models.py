@@ -167,7 +167,7 @@ class Customer(models.Model):
 
 class Order(models.Model):
     # Foreign Key relationship with Customer
-    Customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='orders')
+    Customer = models.ForeignKey(Customer, null= False, blank=False, on_delete=models.CASCADE, related_name='orders')
 
     OrderDate = models.DateTimeField(
         null=False,
@@ -198,10 +198,10 @@ class Order(models.Model):
 
 
 class Review(models.Model):
-    Book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    Book = models.ForeignKey(Book, null= False, blank= False, on_delete=models.CASCADE)
 
     # Foreign Key relationship with Customer
-    Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    Customer = models.ForeignKey(Customer, null= False, blank= False, on_delete=models.CASCADE)
 
     Rating = models.DecimalField(
         max_digits=2,
