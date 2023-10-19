@@ -38,9 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'BookStore',
+    'Authors',
+    'Books',
+    'Customers',
+    'Genres',
+    'Orders',
+    'Publishers',
+    'Reviews',
     'rest_framework',
-    'oauth2_provider',
+    # 'oauth2_provider',
 ]
 
 MIDDLEWARE = [

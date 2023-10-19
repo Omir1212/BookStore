@@ -10,7 +10,12 @@ from django.conf.urls.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    re_path(r'^(?P<path>.*)$', serve, {'document_root': settings.FRONTEND_ROOT}),
-    path('BookStore/', include('BookStore.urls')),
+    path('Books/', include('Books.urls')),
+    path('Authors/', include('Authors.urls')),
+    path('Genres/', include('Genres.urls')),
+    path('Publishers/', include('Publishers.urls')),
+    path('Customers/', include('Customers.urls')),
+    path('Orders/', include('Orders.urls')),
+    path('Reviews/', include('Reviews.urls')),
+    # path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
