@@ -5,7 +5,7 @@ from .models import Order
 
 
 class OrderAdmin(admin.ModelAdmin):
-    search_fields = ['id', 'Title',]
+    search_fields = ['id']
 
 
 

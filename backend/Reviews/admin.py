@@ -5,7 +5,7 @@ from .models import Review
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    search_fields = ['id', 'Title',]
+    search_fields = ['id']
 
 
 

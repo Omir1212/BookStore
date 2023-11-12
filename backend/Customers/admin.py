@@ -5,7 +5,7 @@ from .models import Customer
 
 
 class CustomerAdmin(admin.ModelAdmin):
-    search_fields = ['id', 'Title',]
+    search_fields = ['id', 'Username']
 
 
 

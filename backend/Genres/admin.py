@@ -5,7 +5,7 @@ from .models import Genre
 
 
 class GenreAdmin(admin.ModelAdmin):
-    search_fields = ['id', 'Title',]
+    search_fields = ['id', 'name']
 
 
 

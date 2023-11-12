@@ -7,8 +7,8 @@ from Customers.models import Customer
 
 class Review(models.Model):
 
-    def __str__(self):
-        return self.Book
+    #def __str__(self):
+        #return self.Rev
     
     Book = models.ForeignKey(Book, null= False, blank= False, on_delete=models.CASCADE)
 

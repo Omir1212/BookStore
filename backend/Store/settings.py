@@ -46,8 +46,38 @@ INSTALLED_APPS = [
     'Publishers',
     'Reviews',
     'rest_framework',
-    # 'oauth2_provider',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
 ]
+
+# Use 'allauth' for authentication and registration
+AUTHENTICATION_CLASSES = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# Set the authentication method to use email as the primary identifier
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
+
+# Specify the email domain for the sign-up
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'  # You may change this according to your project's requirements
+ACCOUNT_EMAIL_SUBJECT_PREFIX = '[Your Project] '
+
+# Configure the URLs for login, logout, and password reset
+LOGIN_URL = 'account_login'
+LOGOUT_URL = 'account_logout'
+LOGIN_REDIRECT_URL = '/'
+
+# Configure the URLs for the registration and password reset
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +87,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'Store.urls'

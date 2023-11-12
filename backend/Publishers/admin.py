@@ -5,7 +5,7 @@ from .models import Publisher
 
 
 class PublisherAdmin(admin.ModelAdmin):
-    search_fields = ['id', 'Title',]
+    search_fields = ['id', 'name']
 
 
 
