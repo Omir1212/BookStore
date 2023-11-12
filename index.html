@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creative Example</title>
+</head>
+<body>
+    <h1><mark>Creative Journey</mark></h1>
+    <p>Welcome to a <strong>bold</strong> and <em>creative</em> world.</p>
+    <hr>
+
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Your Age" required>
+        <br>
+
+        <label for="job">Job:</label>
+        <input type="text" id="job" placeholder="Your Job" required>
+        <br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+
+        <a href="https://www.google.com" target="_blank">Visit Example.com</a>
+    </form>
+
+    <div id="error-message" style="color: red;"></div>
+    <div id="success-message" style="color: green;"></div>
+
+    <p>This is a <b>creative</b> use of HTML elements. We are combining <sub>subscript</sub> and <i>italic</i> text for a <mark>highlighted</mark> effect.</p>
+
+    <p>Don't forget to <a href="#footer">scroll down</a> for more!</p>
+
+    <br>
+
+    <h2 id="footer">Footer Section</h2>
+    <p>Thank you for taking this <em>creative</em> journey with us. Feel free to <a href="mailto:info@example.com">contact us</a> if you have any questions or feedback.</p>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const job = document.getElementById('job').value;
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+
+            if (name && age && job) {
+                // Validation passed, display success message
+                errorMessage.innerHTML = '';
+                successMessage.innerHTML = 'Form submitted successfully!';
+            } else {
+                // Display an error message
+                errorMessage.innerHTML = 'Please fill out all fields.';
+                successMessage.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
