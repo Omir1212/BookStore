@@ -26,9 +26,9 @@ class ListBooks(ListAPIView):
     pagination_class = PageNumberPagination
     queryset = Book.objects.all()
 
-    def get_queryset(self):
-        queryset = Book.objects.filter(Q(price=200) & Q(author_name='Omir Hosny'))
-        return queryset
+    # def get_queryset(self):
+    #     queryset = Book.objects.filter(Q(price=200) & Q(author__name='Omir Hosny'))
+    #     return queryset
 
 
 class RetrieveUpdateBook(RetrieveUpdateAPIView):

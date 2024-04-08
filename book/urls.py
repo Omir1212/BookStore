@@ -8,7 +8,7 @@ from . import views
 urlpatterns = [
     path('create/', views.CreateBook.as_view(), name='create-book'),
     path('list/', views.ListBooks.as_view(), name='list-books'),
-    path('update/<int:pk>/', views.RetrieveUpdateBook.as_view(), name='update-book'),
+    path('book/<int:pk>/', views.RetrieveUpdateBook.as_view(), name='update-book'),
     path('delete/<int:pk>/', views.DeleteBook.as_view(), name='delete-book'),
     # path('', include(book_router.urls))
 ]
